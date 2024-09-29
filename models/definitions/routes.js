@@ -27,8 +27,8 @@ routes.init(
     sequelize,
   }
 );
-routes.beforeCreate(async (user) => {
-  user.userId = uuid();
+routes.beforeCreate(async (route) => {
+  route.routeId = uuid();
 });
 
 module.exports = routes;

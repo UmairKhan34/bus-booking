@@ -20,7 +20,7 @@ Buses.init(
     },
 
     busTotalSeats: {
-      type: DataTypes.INTEGER(80),
+      type: DataTypes.STRING(80),
       allowNull: false,
     },
   },

@@ -13,7 +13,7 @@ module.exports = {
   },
   getAllRoutes: async (req, res) => {
     try {
-      const routes = await getAllBus();
+      const routes = await getAllRoutes();
       responseHandler(routes, res);
     } catch (error) {
       return res.send({

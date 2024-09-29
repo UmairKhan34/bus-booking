@@ -4,10 +4,10 @@ module.exports = {
     try {
       const route = await models.routes.create({ ...body });
       return {
-        response: bus,
+        response: route,
       };
     } catch (error) {
-      console.log("Error in route Bus ", error);
+      console.log("Error in creating route  ", error);
       return {
         error: error,
       };
@@ -15,7 +15,7 @@ module.exports = {
   },
   getAllRoutes: async () => {
     try {
-      const route = await models.buses.findAll({
+      const route = await models.routes.findAll({
         attributes: {
           exclude: ["deletedAt"],
         },
