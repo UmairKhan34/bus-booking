@@ -1,6 +1,8 @@
 const sequelize = require("../bin/dbConnection");
 const users = require("./definitions/users");
-const models = { users };
+const buses = require("./definitions/buses");
+const routes = require("./definitions/routes");
+const models = { users, buses, routes };
 const db = {};
 db.sequelize = sequelize;
 sequelize.models = models;
