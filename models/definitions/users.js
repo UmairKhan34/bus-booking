@@ -41,7 +41,7 @@ users.beforeCreate(async (user) => {
   user.userId = uuid();
   user.userPassword = await hash(user.userPassword, 10);
 });
-//to remove password from reponse in postman after creating the user
+//to remove password from response in postman after creating the user
 users.afterCreate(async (user) => {
   delete user.dataValues.userPassword;
 });

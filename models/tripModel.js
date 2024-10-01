@@ -17,8 +17,23 @@ module.exports = {
     try {
       const trips = await models.trips.findAll({
         attributes: {
-          exclude: ["updatedAt", "deletedAt"],
+          exclude: ["updatedAt", "deletedAt", "busId", "routeId"],
         },
+        include: [
+          {
+            model: models.buses,
+            attributes: ["busId", "busNumber", "busType"],
+          },
+          {
+            model: models.routes,
+            attributes: [
+              "routeId",
+              "routeCity",
+              "routeDestination",
+              "routeDistance",
+            ],
+          },
+        ],
       });
       return {
         response: trips,

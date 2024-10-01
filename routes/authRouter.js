@@ -1,7 +1,7 @@
 var routes = require("express").Router();
-const { create, getAll } = require("../controllers/userController");
-const { createUserSchema } = require("../validations/user");
+const { login } = require("../controllers/authController");
+const { loginUserSchema } = require("../validations/user");
 
-routes.get("/get-all-users", getAll);
-routes.post("/create-users", createUserSchema, create);
+routes.post("/login", loginUserSchema, login);
+
 module.exports = routes;
