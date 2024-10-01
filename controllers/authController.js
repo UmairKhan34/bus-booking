@@ -30,7 +30,9 @@ module.exports = {
       const user = isUser.response.dataValues;
 
       delete user.userPassword;
-      const token = sign(user, process.env.SECRET);
+      const token = sign(user, process.env.SECRET, {
+        expiresIn: "1d",
+      });
       res.cookie("auth", token);
       return responseHandler({ response: token }, res);
     } catch (error) {

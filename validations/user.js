@@ -8,7 +8,7 @@ module.exports = {
         .pattern(new RegExp("^[a-zA-Z0-9]{6,30}$"))
         .required(),
       userEmail: Joi.string().email().required(),
-      userPhoneNumber: Joi.string().max(12).required(),
+      userPhoneNumber: Joi.string().max(12).required().length(13),
     });
     try {
       await createUser.validateAsync(req.body);
